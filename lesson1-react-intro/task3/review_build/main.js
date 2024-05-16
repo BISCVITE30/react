@@ -151,7 +151,7 @@ object-assign
         l.a.createElement(
           'div',
           { className: 'greeting__text' },
-          "I'm learning React"
+          'I am learning React'
         )
       );
     i.a.render(u, o);
