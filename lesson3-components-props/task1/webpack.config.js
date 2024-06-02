@@ -6,7 +6,7 @@ const webpack = require('webpack');
 module.exports = (_, args) => {
   const isProduction = args.mode === 'production';
   const config = {
-    entry: './src/index.jsx',
+    entry: './src/Search.jsx',
     output: {
       filename: 'bundle.js',
     },
