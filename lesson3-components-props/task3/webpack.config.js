@@ -28,6 +28,7 @@ module.exports = (_, args) => {
     },
     plugins: [
       new webpack.ProgressPlugin(),
+      new MiniCssExtractPlugin(),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: './src/index.html',
