@@ -3,20 +3,20 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     filename: 'bundle.js',
   },
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader', ],
-      },
-      {
-        test: /.js$/,
+        test: /.jsx$/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.s?css$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      }
     ],
   },
   plugins: [
