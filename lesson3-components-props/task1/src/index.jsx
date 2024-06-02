@@ -5,8 +5,8 @@ import './search.scss';
 
 const rootElem = document.querySelector('#root');
 
-const Greeting = (props) => {
-  console.log(props)
+const Search = props => {
+  console.log(props);
   return (
     <div className="search">
       <h1 className="search__title">{`Hello ${props.name}. What to search for you`}</h1>
@@ -18,4 +18,6 @@ const Greeting = (props) => {
   );
 };
 
-ReactDOM.render(<Greeting name="Bob" />, rootElem);
+export default Search;
+
+ReactDOM.render(<Search name="Tom" />, rootElem);
