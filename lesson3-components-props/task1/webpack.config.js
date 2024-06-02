@@ -32,6 +32,7 @@ module.exports = (_, args) => {
       new HtmlWebpackPlugin({
         template: './src/render.html',
       }),
+      new MiniCssExtractPlugin(),
     ],
   };
   return config;
