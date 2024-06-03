@@ -14,6 +14,6 @@ const userData = {
 
 
 ReactDOM.render(
-  <Profile user={userData} />,
+  <Profile userData={userData} />,
   rootElem,
 );
