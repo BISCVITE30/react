@@ -4,7 +4,7 @@ import './clock.scss';
 import moment from 'moment';
 
 
-const formatDate = date => moment(date).format('h:mm:ss a');
+const formatDate = date => moment(date).format('h:mm:ss A');
 
 class Clock extends Component {
   constructor(props) {
