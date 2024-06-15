@@ -6,18 +6,22 @@ class Toggler extends Component {
     super(props);
 
     this.state = {
-      static: 'Off',
+      status: 'Off',
     };
+
+    this.toggle = this.toggle.bind(this);
   }
 
-  Toggle(event) {
-    event.target.textContent === 'Off' ? event.target.textContent = 'On' : event.target.textContent = 'Off'
+  toggle() {
+    this.setState(event => ({
+      status: event.status === 'Off' ? 'On' : 'Off',
+    }));
   }
 
   render() {
     return (
-      <div className="toggler" onClick={this.Toggle}>
-        {this.state.static}
+      <div className="toggler" onClick={this.toggle}>
+        {this.state.status}
       </div>
     );
   }
