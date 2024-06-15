@@ -28,22 +28,19 @@ class ColorPicker extends Component {
         <div className="picker__title">{this.state.name}</div>
         <div>
           <button
-            className="picker__button"
+            className="picker__button picker__button_coral"
             onMouseEnter={() => this.setBodyColor(CORAL)}
             onMouseLeave={() => this.setBodyColor('')}
-            style={{ backgroundColor: CORAL }}
           ></button>
           <button
-            className="picker__button"
+            className="picker__button picker__button_aqua"
             onMouseEnter={() => this.setBodyColor(AQUA)}
             onMouseLeave={() => this.setBodyColor('')}
-            style={{ backgroundColor: AQUA }}
           ></button>
           <button
-            className="picker__button"
+            className="picker__button picker__button_bisque"
             onMouseEnter={() => this.setBodyColor(BISQUE)}
             onMouseLeave={() => this.setBodyColor('')}
-            style={{ backgroundColor: BISQUE }}
           ></button>
         </div>
       </div>

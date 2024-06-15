@@ -28,5 +28,17 @@ body {
     border-radius: 8px;
     cursor: pointer;
     outline: none;
+
+    &_coral {
+      background-color: #ff7f50;
+    }
+
+    &_aqua {
+      background-color: #00ffff;
+    }
+
+    &_bisque {
+      background-color: #ffe4c4;
+    }
   }
 }
