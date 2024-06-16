@@ -6,4 +6,4 @@ class GuestGreeting extends Component{
     }
 }
 
-export default GuestGreeting
+export default GuestGreeting;
