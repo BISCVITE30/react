@@ -29,11 +29,11 @@ class Auth extends Component {
     let button;
 
     if (this.state.isLoggedIn) {
-        button = <button className='btn login' onClick={() => this.handleLogout()}><Login /></button>;
+        button = <button className='btn logout' onClick={() => this.handleLogout()}><Logout /></button>;
     } else {
         button = (
-          <button className="btn logout" onClick={() => this.handleLogin()}>
-            <Logout />
+          <button className="btn login" onClick={() => this.handleLogin()}>
+            <Login />
           </button>
         );
   
