@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Greeting from './Greeting.jsx';
 import './index.scss';
+import Login from './Login.jsx';
+import Logout from './Logout.jsx';
 
 class Auth extends Component {
   constructor(props) {
@@ -9,6 +11,9 @@ class Auth extends Component {
     this.state = {
       isLoggedIn: false,
     };
+
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleLogout() {
@@ -24,18 +29,18 @@ class Auth extends Component {
   }
 
   render() {
-    let button;
-
-    if (this.state.isLoggedIn) {
-      button = <button className='btn logout' onClick={() => this.handleLogout()}>Logout</button>;
-    } else {
-      button = <button className='btn login' onClick={() => this.handleLogin()}>Login</button>;
-    }
+    const { isLoggedIn } = this.state;
 
     return (
       <div className="panel">
-        <Greeting isLoggedIn={this.state.isLoggedIn} />
-        <div>{button}</div>
+        <Greeting isLoggedIn={isLoggedIn} />
+        <div>
+          {isLoggedIn ? (
+            <Logout onLogout={this.handleLogout} />
+          ) : (
+            <Login onLogin={this.handleLogin} />
+          )}
+        </div>
       </div>
     );
   }

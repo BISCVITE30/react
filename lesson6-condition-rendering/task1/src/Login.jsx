@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 
 class Login extends Component {
   render() {
-    return <button className="btn login">Login</button>;
+    const { onLogin } = this.props;
+    return (
+      <button className="btn login" onClick={onLogin}>
+        Login
+      </button>
+    );
   }
 }
 

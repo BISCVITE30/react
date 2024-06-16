@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 
 class Logout extends Component {
   render() {
-    return <button className="btn logout">Logout</button>;
+    const { onLogout } = this.props;
+    return (
+      <button className="btn logout" onClick={onLogout}>
+        Logout
+      </button>
+    );
   }
 }
 
