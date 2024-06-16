@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Info from './Info.jsx';
 
-const text1 = 'Price is 500$. Avaible in 2 colors';
-const text2 = 'Price is 650$. Not avaible';
+const text1 = 'Price is 500$. Available in 2 colors';
+const text2 = 'Price is 650$. Not available';
 
 class Page extends Component{
     constructor(props){
