@@ -1,5 +1,5 @@
 import React from 'react';
-import TransactionList from './TransactionsList.jsx';
+import TransactionsList from './TransactionsList.jsx';
 
 const transactions = [
   {

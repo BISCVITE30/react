@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Transaction from './Transaction.jsx';
 
-class TransactionList extends Component {
+class TransactionsList extends Component {
   render() {
     return (
       <ul className="transactions">
