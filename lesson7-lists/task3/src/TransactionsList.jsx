@@ -20,4 +20,4 @@ class TransactionList extends Component {
   }
 }
 
-export default TransactionList;
+export default TransactionsList;

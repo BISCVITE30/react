@@ -1,5 +1,5 @@
 import React from 'react';
-import TransactionList from './TransactionList.jsx';
+import TransactionList from './TransactionsList.jsx';
 
 const transactions = [
   {
@@ -29,7 +29,7 @@ const transactions = [
 ];
 
 const App = () => {
-  return <TransactionList transactions={transactions}/>;
+  return <TransactionsList transactions={transactions}/>;
 };
 
 export default App;
