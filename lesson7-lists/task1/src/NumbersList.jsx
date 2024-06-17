@@ -1,25 +1,8 @@
-import React, { Component } from "react";
+import React from 'react';
 
-class NumbersList extends Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
-            numbers: props.numbers,
-        }
-    }
-
-    render(){
-        return (
-          <ul>
-            <li>{this.state.numbers[0]}</li>
-            <li>{this.state.numbers[1]}</li>
-            <li>{this.state.numbers[2]}</li>
-            <li>{this.state.numbers[3]}</li>
-            <li>{this.state.numbers[4]}</li>
-          </ul>
-        );
-    }
-}
+const NumbersList = props => {
+  const numberElem = props.numbers.map(num => <li>{num}</li>);
+  return <ul>{numberElem}</ul>;
+};
 
 export default NumbersList;
