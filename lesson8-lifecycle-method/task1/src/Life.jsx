@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 class Life extends Component {
   constructor() {
     super();
+
+    this.state = {
+      hello: 'Hello',
+    };
     console.log('constructor: good place to create state');
   }
 
@@ -12,19 +16,26 @@ class Life extends Component {
 
   shouldComponentUpdate() {
     console.log('shouldComponentUpdate(nextProps, nextState): decide to render or not to render');
+    return true
   }
 
   componentDidUpdate(prevProps, prevState) {
-    return console.log('componentDidUpdate(prevProps, prevState): some updates based on new props');
+    console.log('componentDidUpdate(prevProps, prevState): some updates based on new props');
   }
 
   componentWillUnmount() {
     console.log('componentWillUnmount(): cleanup before DOM related to component will be removed');
   }
 
+  Hi = () => {
+    this.setState({
+      hello: 'Hi',
+    });
+  };
+
   render() {
     console.log('return React element to build DOM');
-    return null;
+    return <div onClick={() => this.Hi()}>{this.state.hello}</div>;
   }
 }
 
