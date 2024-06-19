@@ -28,7 +28,7 @@ class Dimension extends Component {
     }
     
   render() {
-    return <div className="dimensions">{this.state.height}px - {this.state.width}px</div>;
+    return <div className="dimensions">{this.state.height} x {this.state.width}</div>;
   }
 }
 
