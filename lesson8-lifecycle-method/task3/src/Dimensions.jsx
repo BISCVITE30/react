@@ -5,13 +5,16 @@ class Dimensions extends Component {
         super();
 
         this.state = {
-            width:  window.innerWidth,
-            height: window.innerHeight
+            width:  null,
+            height: null
         }
     }
 
     componentDidMount(){
         window.addEventListener('resize', this.onResize)
+
+        const { innerWidth, innerHeight } = window;
+        this.setDimentions(innerWidth, innerHeight);
     }
 
     componentWillUnMount(){
@@ -19,16 +22,21 @@ class Dimensions extends Component {
     }
     
     onResize = e => {
-        const { innerHeight, innerWidth } = e.target;
-        
+        const { innerWidth, innerHeight } = e.target;
+        this.setDimentions(innerWidth, innerHeight);
+    }
+
+    setDimentions = (width, height) => {
         this.setState({
-            width: innerWidth,
-            height: innerHeight,
+            width,
+            height,
         });
+        document.title = `${innerWidth} x ${innerHeight}`
+
     }
     
   render() {
-    return <div className="dimensions">{this.state.height} x {this.state.width}</div>;
+    return <div className="dimensions">{this.state.width} x {this.state.height}</div>;
   }
 }
 
