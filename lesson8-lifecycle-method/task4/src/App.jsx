@@ -1,7 +1,10 @@
 import React from 'react';
+import User from './User.jsx';
 
 const App = () => {
-  return <div>Hello, React!</div>;
+  return (
+    <User userId='facebook' />
+  );
 };
 
 export default App;
