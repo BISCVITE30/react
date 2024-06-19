@@ -6,7 +6,7 @@ class Life extends Component {
     console.log('constructor: good place to create state');
   }
 
-  ComponentDidMount() {
+  componentDidMount() {
     return console.log('componentDidMount: API calls, subscriptions');
   }
 
@@ -16,11 +16,11 @@ class Life extends Component {
    );
   }
 
-  ComponentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) {
     return console.log('componentDidUpdate(prevProps, prevState): some updates based on new props');
   }
 
-  ComponentWillUnmount() {
+  componentWillUnmount() {
     return console.log(
       'componentWillUnmount(): cleanup before DOM related to component will be removed',
     );
