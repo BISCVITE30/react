@@ -3,23 +3,27 @@ import React, { Component } from 'react';
 class Life extends Component {
   constructor() {
     super();
-    console.log('good place to create state');
+    console.log('constructor: good place to create state');
   }
 
   ComponentDidMount() {
-    return console.log('API calls, subscritions');
+    return console.log('componentDidMount: API calls, subscriptions');
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-   return console.log('decide to render not to render');
+   return console.log(
+     'shouldComponentUpdate(nextProps, nextState): decide to render or not to render',
+   );
   }
 
   ComponentDidUpdate(prevProps, prevState) {
-    return console.log('some updates based on new props');
+    return console.log('componentDidUpdate(prevProps, prevState): some updates based on new props');
   }
 
   ComponentWillUnmount() {
-    return console.log('cleanup before DOM related to component will be removed');
+    return console.log(
+      'componentWillUnmount(): cleanup before DOM related to component will be removed',
+    );
   }
 
   render() {
