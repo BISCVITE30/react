@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Dimension extends Component {
+class Dimensions extends Component {
     constructor(){
         super();
 
@@ -32,4 +32,4 @@ class Dimension extends Component {
   }
 }
 
-export default Dimension;
+export default Dimensions;
