@@ -17,7 +17,7 @@ class Dimensions extends Component {
         this.setDimentions(innerWidth, innerHeight);
     }
 
-    componentWillUnMount(){
+    componentWillUnmount(){
         window.removeEventListener('resize', this.onResize)
     }
     
@@ -31,12 +31,12 @@ class Dimensions extends Component {
             width,
             height,
         });
-        document.title = `${innerWidth} x ${innerHeight}`
+        document.title = `${innerWidth}px - ${innerHeight}px`
 
     }
     
   render() {
-    return <div className="dimensions">{this.state.width} x {this.state.height}</div>;
+    return <div className="dimensions">{`${this.state.width}px - ${this.state.height}px`}</div>;
   }
 }
 
