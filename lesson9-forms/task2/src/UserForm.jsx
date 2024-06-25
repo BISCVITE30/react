@@ -3,14 +3,13 @@ import React, { Component } from 'react';
 class UserForm extends Component {
   state = {
     name: '',
-    student: '',
+    student: false,
     occupation: '',
     about: '',
   };
 
   handleChange = event => {
-    const { name, value, type , checked} = event.target;
-
+    const { name, value, type, checked } = event.target;
     const val = type === 'checkbox' ? checked : value;
 
     this.setState({
@@ -20,7 +19,7 @@ class UserForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
+    this.props.onSubmit(this.state);
   };
 
   render() {
@@ -49,7 +48,7 @@ class UserForm extends Component {
           <input
             className="form-input"
             onChange={this.handleChange}
-            value={this.state.student}
+            checked={this.state.student}
             type="checkbox"
             id="student"
             name="student"
@@ -57,7 +56,7 @@ class UserForm extends Component {
         </div>
 
         <div className="form-control">
-          <label className="form-label" id="occupation" htmlFor="occupation">
+          <label className="form-label" htmlFor="occupation">
             Occupation
           </label>
           <select
@@ -65,6 +64,7 @@ class UserForm extends Component {
             onChange={this.handleChange}
             value={this.state.occupation}
             className="form-input"
+            id="occupation"
           >
             <option value="london">London</option>
             <option value="new-york">New York</option>
@@ -74,7 +74,7 @@ class UserForm extends Component {
         </div>
 
         <div className="form-control">
-          <label className="form-label" id="about" htmlFor="about">
+          <label className="form-label" htmlFor="about">
             About
           </label>
           <textarea
@@ -82,6 +82,7 @@ class UserForm extends Component {
             onChange={this.handleChange}
             value={this.state.about}
             className="form-input"
+            id="about"
           ></textarea>
         </div>
 
