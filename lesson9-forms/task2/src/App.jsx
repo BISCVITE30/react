@@ -1,7 +1,8 @@
 import React from 'react';
+import UserForm from './UserForm.jsx';
 
 const App = () => {
-  return <div>Hello, React!</div>;
+  return <UserForm />;
 };
 
 export default App;
