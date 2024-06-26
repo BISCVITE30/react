@@ -7,8 +7,8 @@ class UsersList extends Component {
     filterText: '',
   };
 
-  handleFilter = filterText => {
-    this.setState({ filterText });
+  handleFilter = event => {
+    this.setState({ filterText: event.target.value });
   };
 
   render() {
