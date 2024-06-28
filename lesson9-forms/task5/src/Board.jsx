@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-class Board extends Component{
-    // render(){
-    //     return();
-    // }
-}
+// class Board extends Component{
+// render(){
+//     return();
+// }
+// }
 
-export default Board;
+// export default Board;

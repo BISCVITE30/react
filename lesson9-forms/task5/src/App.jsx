@@ -1,7 +1,8 @@
 import React from 'react';
+import Game from './Square.jsx';
 
 const App = () => {
-  return <div>Hello, React!</div>;
+  return <Game />;
 };
 
 export default App;
