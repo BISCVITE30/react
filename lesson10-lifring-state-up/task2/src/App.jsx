@@ -34,14 +34,14 @@ class App extends Component {
   };
 
   render() {
-    const count = this.state.cartItems.length;
+    const { userData } = this.state;
     return (
       <div className="page">
         <h1 className="title">
-          {`Hello, ${this.state.userData.firstName} ${this.state.userData.lastName}`}
+          {`Hello, ${userData.firstName} ${userData.lastName}`}
         </h1>
         <main className="content">
-          <ShoppingCart cartItems={this.state.cartItems} userData={this.state.userData} count={count} />
+          <ShoppingCart cartItems={this.state.cartItems} userData={this.state.userData}/>
           <Profile userData={this.state.userData} handleChange={this.handleChange} />
         </main>
       </div>
