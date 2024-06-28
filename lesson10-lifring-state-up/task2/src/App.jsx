@@ -34,6 +34,7 @@ class App extends Component {
   };
 
   render() {
+    const count = this.state.cartItems.length;
     const { userData } = this.state;
     return (
       <div className="page">
@@ -41,7 +42,7 @@ class App extends Component {
           {`Hello, ${userData.firstName} ${userData.lastName}`}
         </h1>
         <main className="content">
-          <ShoppingCart cartItems={this.state.cartItems} userData={this.state.userData}/>
+          <ShoppingCart cartItems={this.state.cartItems} userData={this.state.userData} count={count} />
           <Profile userData={this.state.userData} handleChange={this.handleChange} />
         </main>
       </div>

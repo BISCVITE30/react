@@ -2,12 +2,11 @@ import React from 'react';
 import CartTitle from './CartTitle.jsx';
 import ProductsList from './ProductsList.jsx';
 
-const ShoppingCart = ({ cartItems, userData}) => {
-  const count = cartItems.length;
+const ShoppingCart = ({ cartItems, userData, count }) => {
   return (
     <div className="column">
       <CartTitle userData={userData} count={count} />
-      <ProductsList cartItems={cartItems} />
+      <ProductsList cartItems={cartItems}/>
     </div>
   );
 };
