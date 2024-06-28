@@ -1,12 +1,12 @@
 import React from "react";
 
-const UserMenu = ({ name, avatar_url }) => {
+const UserMenu = ({ userData }) => {
     return (
       <div className="menu">
-        <span className="menu__greeting">{`Hello, ${name}`}</span>
+        <span className="menu__greeting">{`Hello, ${userData.name}`}</span>
         <img
           alt="User Avatar"
-          src={avatar_url}
+          src={userData.avatar_url}
           className="menu__avatar"
         />
       </div>

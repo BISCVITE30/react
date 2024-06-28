@@ -7,7 +7,7 @@ class App extends Component {
     userData: null,
   };
 
-  componentDidMount(){
+  componentDidMount() {
     this.fetchUserData(this.props.userId);
   }
 
@@ -16,19 +16,17 @@ class App extends Component {
     fetch(userUrl)
       .then(response => response.json())
       .then(userData => this.setState({ userData }));
-
   };
   render() {
-    if(!this.state.userData){
+    if (!this.state.userData) {
       return null;
     }
-    const { name, location, avatar_url } = this.state.userData;
     return (
       <div className="page">
         <header className="header">
-          <UserMenu name={name} avatar_url={avatar_url} />
+          <UserMenu userData={this.state.userData} />
         </header>
-        <UserProfile name={name} location={location} avatar_url={avatar_url} />
+        <UserProfile userData={this.state.userData} />
       </div>
     );
   }
