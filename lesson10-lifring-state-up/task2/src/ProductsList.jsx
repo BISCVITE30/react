@@ -11,6 +11,7 @@ const ProductsList = ({ cartItems }) => {
   });
 
   const total = cartItems.reduce((acc, item) => acc + item.price, 0);
+  
   return (
     <div className="products">
       <ul className="products__list">{prodList}</ul>
