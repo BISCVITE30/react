@@ -6,7 +6,7 @@ const ShoppingCart = ({ cartItems, userData }) => {
 
   return (
     <div className="column">
-      <CartTitle userData={userData} count={cartItems.length} />
+      <CartTitle userName={userData.firstName} count={cartItems.length} />
       <ProductsList cartItems={cartItems}/>
     </div>
   );
