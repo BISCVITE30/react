@@ -10,11 +10,9 @@ function ProductTable({ products, filterText, inStockOnly }) {
     if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
       return;
     }
-
     if (inStockOnly && !product.stocked) {
       return;
     }
-
     if (product.category !== lastCategory) {
       rows.push(<ProductCategoryRow category={product.category} key={product.category} />);
     }
