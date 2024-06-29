@@ -8,19 +8,6 @@ class App extends Component {
       firstName: 'John',
       lastName: 'Doe',
     },
-
-    cartItems: [
-      {
-        id: '1',
-        name: 'Ipad Pro',
-        price: 799,
-      },
-      {
-        id: '2',
-        name: 'Iphone 11',
-        price: 999,
-      },
-    ],
   };
 
   handleChange = event => {
@@ -37,12 +24,10 @@ class App extends Component {
     const { userData } = this.state;
     return (
       <div className="page">
-        <h1 className="title">
-          {`Hello, ${userData.firstName} ${userData.lastName}`}
-        </h1>
+        <h1 className="title">{`Hello, ${userData.firstName} ${userData.lastName}`}</h1>
         <main className="content">
-          <ShoppingCart cartItems={this.state.cartItems} userData={this.state.userData} />
-          <Profile userData={this.state.userData} handleChange={this.handleChange} />
+          <ShoppingCart userData={userData} />
+          <Profile userData={userData} handleChange={this.handleChange} />
         </main>
       </div>
     );
