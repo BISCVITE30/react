@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Dialog from './Dialog';
+import Dialog from './Dialog.jsx';
 
 class App extends Component {
   state = {
@@ -20,8 +20,8 @@ class App extends Component {
 
   render() {
     return (
-      <div class="app">
-        <button class="btn" onClick={this.isOpen}>Show dialog</button>
+      <div className="app">
+        <button className="btn" onClick={this.isOpen}>Show dialog</button>
         <Dialog title="Recommendation" isOpen={this.state.isOpen} onClose={this.onClose} >
           <p>Use immutable array methods to work with data. It will help to avoid bugs</p>
         </Dialog>
