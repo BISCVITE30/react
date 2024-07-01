@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 
 class Expand extends Component {
   state = {
-    isExpanded: false, // Переименовано состояние для отображения развёрнутости
+    isExpanded: false,
   };
 
   componentDidUpdate(prevProps) {
-    // Проверяем изменение свойства expanded в props
     if (this.props.expanded !== prevProps.expanded) {
-      this.setState({ isExpanded: this.props.expanded }); // Обновляем состояние isExpanded при изменении expanded
+      this.setState({ isExpanded: this.props.expanded });
     }
   }
 
@@ -23,8 +22,8 @@ class Expand extends Component {
           <button
             className="expand__toggle-btn"
             onClick={() => {
-              toggleBtn(); // Вызываем toggleBtn из props
-              this.setState({ isExpanded: !isExpanded }); // Инвертируем состояние isExpanded
+              toggleBtn();
+              this.setState({ isExpanded: !isExpanded });
             }}
           >
             +<i
