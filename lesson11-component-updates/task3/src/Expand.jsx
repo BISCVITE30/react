@@ -26,7 +26,7 @@ class Expand extends Component {
               this.setState({ isExpanded: !isExpanded });
             }}
           >
-            +<i
+            <i
               className="fas fa-chevron-up"
               style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
             />
