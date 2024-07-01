@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 class Expand extends Component {
   state = {
@@ -23,10 +21,7 @@ class Expand extends Component {
               this.setState({ rotated: !rotated });
             }}
           >
-            <FontAwesomeIcon
-              icon={faChevronUp}
-              style={{ transform: rotated ? 'rotate(180deg)' : 'rotate(0deg)' }}
-            />
+            <i className="fas fa-chevron-up" />
           </button>
         </div>
         <div className="expand__content">{children}</div>
