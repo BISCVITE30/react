@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 class Expand extends Component {
   state = {
-    rotated: true,
+    isExpanded: false,
   };
 
+  componentDidUpdate(prevProps) {
+    if (this.props.expanded !== prevProps.expanded) {
+      this.setState({ isExpanded: this.props.expanded });
+    }
+  }
 
   render() {
     const { title, toggleBtn, children } = this.props;
-    const { rotated } = this.state;
+    const { isExpanded } = this.state;
 
     return (
       <div className="expand border">
@@ -18,13 +25,16 @@ class Expand extends Component {
             className="expand__toggle-btn"
             onClick={() => {
               toggleBtn();
-              this.setState({ rotated: !rotated });
+              this.setState({ isExpanded: !isExpanded });
             }}
           >
-            <i className="fas fa-chevron-up" />
+            <FontAwesomeIcon
+              icon={faChevronUp}
+              style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
+            />
           </button>
         </div>
-        <div className="expand__content">{children}</div>
+        {isExpanded && <div className="expand__content">{children}</div>}
       </div>
     );
   }

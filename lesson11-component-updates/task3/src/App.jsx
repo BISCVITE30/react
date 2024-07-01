@@ -7,9 +7,9 @@ class App extends Component {
   };
 
   toggleBtn = () => {
-    this.setState(prevState => ({
-      content: !prevState.content,
-    }));
+    this.setState({
+      content: !this.state.content,
+    });
   };
 
   render() {
