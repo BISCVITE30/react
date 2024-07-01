@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 class Expand extends Component {
   state = {
-    isExpanded: false,
+    isExpanded: false, // Переименовано состояние для отображения развёрнутости
   };
 
   componentDidUpdate(prevProps) {
+    // Проверяем изменение свойства expanded в props
     if (this.props.expanded !== prevProps.expanded) {
-      this.setState({ isExpanded: this.props.expanded });
+      this.setState({ isExpanded: this.props.expanded }); // Обновляем состояние isExpanded при изменении expanded
     }
   }
 
@@ -24,12 +23,12 @@ class Expand extends Component {
           <button
             className="expand__toggle-btn"
             onClick={() => {
-              toggleBtn();
-              this.setState({ isExpanded: !isExpanded });
+              toggleBtn(); // Вызываем toggleBtn из props
+              this.setState({ isExpanded: !isExpanded }); // Инвертируем состояние isExpanded
             }}
           >
-            <FontAwesomeIcon
-              icon={faChevronUp}
+            <i
+              className="fas fa-chevron-up"
               style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
             />
           </button>

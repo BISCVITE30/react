@@ -7,9 +7,9 @@ class App extends Component {
   };
 
   toggleBtn = () => {
-    this.setState({
-      content: !this.state.content,
-    });
+    this.setState(prevState => ({
+      content: !prevState.content,
+    }));
   };
 
   render() {
@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div className="app">
         <Expand title="Some title" toggleBtn={this.toggleBtn} expanded={this.state.content}>
-          {this.state.content ? text : ''}
+          {text}
         </Expand>
       </div>
     );
