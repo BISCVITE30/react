@@ -5,14 +5,14 @@ class Expand extends Component {
     isExpanded: false,
   };
 
-  componentDidUpdate(prevProps) {
-    if (this.props.expanded !== prevProps.expanded) {
-      this.setState({ isExpanded: this.props.expanded });
-    }
-  }
+  toggleBtn = () => {
+    this.setState(prevState => ({
+      isExpanded: !prevState.isExpanded,
+    }));
+  };
 
   render() {
-    const { title, toggleBtn, children } = this.props;
+    const { title, children } = this.props;
     const { isExpanded } = this.state;
 
     return (
@@ -22,11 +22,11 @@ class Expand extends Component {
           <button
             className="expand__toggle-btn"
             onClick={() => {
-              toggleBtn();
+              this.toggleBtn();
               this.setState({ isExpanded: !isExpanded });
             }}
           >
-            <i
+            +<i
               className="fas fa-chevron-up"
               style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
             />
