@@ -59,9 +59,9 @@ class TaskList extends Component {
   handleTaskStatusChange = id => {
     const { done, text } = this.state.tasks.find(task => task.id === id);
     const updatedTask = {
-        text,
-        done: !done,
-    }
+      text,
+      done: !done,
+    };
 
     fetch(`${baseUrl}/${id}`, {
       method: 'PUT',
