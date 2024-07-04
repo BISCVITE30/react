@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-const User = ({ match }) => {
+const User = () => {
   const [userData, setUserData] = useState(null);
   const { userId } = useParams();
 
@@ -19,7 +19,7 @@ const User = ({ match }) => {
       });
   }, [userId]);
 
-  if(!userData){
+  if (!userData) {
     return null;
   }
 

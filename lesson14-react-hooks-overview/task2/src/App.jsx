@@ -1,25 +1,25 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import Users from './Users';
-import Home from './Home';
+import User from './User';
 
 const App = () => {
   return (
-    <div className="page">
+    <div className="page__content">
       <BrowserRouter>
+        <h1>Users</h1>
         <ul className="navigation">
           <li className="navigation__item">
-            <Link to="/">Home</Link>
+            <Link to="/users/github">Github</Link>
           </li>
           <li className="navigation__item">
-            <Link to="/users">Users</Link>
+            <Link to="/users/facebook">Facebook</Link>
           </li>
         </ul>
-        <Route path="/users">
-          <Users />
+        <Route exact path="/users/:userId">
+          <User />
         </Route>
         <Route exact path="/">
-          <Home />
+          <span>Select a user please</span>
         </Route>
       </BrowserRouter>
     </div>
