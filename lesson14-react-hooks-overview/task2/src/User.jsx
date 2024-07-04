@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom';
 
 const User = ({ match }) => {
   const [userData, setUserData] = useState(null);
-  const { userId} = useParams();
+  const { userId } = useParams();
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${userId}`)
@@ -17,7 +17,7 @@ const User = ({ match }) => {
       .then(userData => {
         setUserData(userData);
       });
-  }, [match.params.userId]);
+  }, [userId]);
 
   if(!userData){
     return null;
